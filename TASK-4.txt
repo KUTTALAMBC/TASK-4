@@ -1,0 +1,323 @@
+1.> How to compare two JSON have the same properties without order?
+
+
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic 
+var obj1 = { name: "Person 1", age:5 };
+var obj2 = { age:5, name: "Person 1" };
+
+  console.log(obj1==obj2);
+  console.log(obj1===obj2);
+
+  //end-here
+});
+
+Output:
+          
+          false
+          false
+          
+2.>  Use the rest countries API url -> https://restcountries.eu/rest/v2/all and display all the country flags in console .?
+
+3.> Use the same rest countries and print all countries name, region, sub region and population.?
+\
+
+     To solve both questions we want to use vs code instead of IDE
+     
+     index.html
+     
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script src="script.js"></script>
+</body>
+</html>
+
+       js.script 
+   
+   var request= new XMLHttpRequest();
+request.open('GET','https://restcountries.eu/rest/v2/all' ,true);
+request.send();
+request.onload=function(){
+    var data=JSON.parse(request.response);
+    console.log(data);
+    for(var i in data ){
+        console.log(data[i].name + "," + data[i].flag + "," + data[i].capital);
+        
+    }
+}
+
+
+OUTPUT
+
+script.js:6 (250) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, …][0 … 99][100 … 199][200 … 249]length: 250
+script.js:8 Afghanistan,https://restcountries.eu/data/afg.svg,Kabul
+script.js:8 Åland Islands,https://restcountries.eu/data/ala.svg,Mariehamn
+script.js:8 Albania,https://restcountries.eu/data/alb.svg,Tirana
+script.js:8 Algeria,https://restcountries.eu/data/dza.svg,Algiers
+script.js:8 American Samoa,https://restcountries.eu/data/asm.svg,Pago Pago
+script.js:8 Andorra,https://restcountries.eu/data/and.svg,Andorra la Vella
+script.js:8 Angola,https://restcountries.eu/data/ago.svg,Luanda
+script.js:8 Anguilla,https://restcountries.eu/data/aia.svg,The Valley
+script.js:8 Antarctica,https://restcountries.eu/data/ata.svg,
+script.js:8 Antigua and Barbuda,https://restcountries.eu/data/atg.svg,Saint John's
+script.js:8 Argentina,https://restcountries.eu/data/arg.svg,Buenos Aires
+script.js:8 Armenia,https://restcountries.eu/data/arm.svg,Yerevan
+script.js:8 Aruba,https://restcountries.eu/data/abw.svg,Oranjestad
+script.js:8 Australia,https://restcountries.eu/data/aus.svg,Canberra
+script.js:8 Austria,https://restcountries.eu/data/aut.svg,Vienna
+script.js:8 Azerbaijan,https://restcountries.eu/data/aze.svg,Baku
+script.js:8 Bahamas,https://restcountries.eu/data/bhs.svg,Nassau
+script.js:8 Bahrain,https://restcountries.eu/data/bhr.svg,Manama
+script.js:8 Bangladesh,https://restcountries.eu/data/bgd.svg,Dhaka
+script.js:8 Barbados,https://restcountries.eu/data/brb.svg,Bridgetown
+script.js:8 Belarus,https://restcountries.eu/data/blr.svg,Minsk
+script.js:8 Belgium,https://restcountries.eu/data/bel.svg,Brussels
+script.js:8 Belize,https://restcountries.eu/data/blz.svg,Belmopan
+script.js:8 Benin,https://restcountries.eu/data/ben.svg,Porto-Novo
+script.js:8 Bermuda,https://restcountries.eu/data/bmu.svg,Hamilton
+script.js:8 Bhutan,https://restcountries.eu/data/btn.svg,Thimphu
+script.js:8 Bolivia (Plurinational State of),https://restcountries.eu/data/bol.svg,Sucre
+script.js:8 Bonaire, Sint Eustatius and Saba,https://restcountries.eu/data/bes.svg,Kralendijk
+script.js:8 Bosnia and Herzegovina,https://restcountries.eu/data/bih.svg,Sarajevo
+script.js:8 Botswana,https://restcountries.eu/data/bwa.svg,Gaborone
+script.js:8 Bouvet Island,https://restcountries.eu/data/bvt.svg,
+script.js:8 Brazil,https://restcountries.eu/data/bra.svg,Brasília
+script.js:8 British Indian Ocean Territory,https://restcountries.eu/data/iot.svg,Diego Garcia
+script.js:8 United States Minor Outlying Islands,https://restcountries.eu/data/umi.svg,
+script.js:8 Virgin Islands (British),https://restcountries.eu/data/vgb.svg,Road Town
+script.js:8 Virgin Islands (U.S.),https://restcountries.eu/data/vir.svg,Charlotte Amalie
+script.js:8 Brunei Darussalam,https://restcountries.eu/data/brn.svg,Bandar Seri Begawan
+script.js:8 Bulgaria,https://restcountries.eu/data/bgr.svg,Sofia
+script.js:8 Burkina Faso,https://restcountries.eu/data/bfa.svg,Ouagadougou
+script.js:8 Burundi,https://restcountries.eu/data/bdi.svg,Bujumbura
+script.js:8 Cambodia,https://restcountries.eu/data/khm.svg,Phnom Penh
+script.js:8 Cameroon,https://restcountries.eu/data/cmr.svg,Yaoundé
+script.js:8 Canada,https://restcountries.eu/data/can.svg,Ottawa
+script.js:8 Cabo Verde,https://restcountries.eu/data/cpv.svg,Praia
+script.js:8 Cayman Islands,https://restcountries.eu/data/cym.svg,George Town
+script.js:8 Central African Republic,https://restcountries.eu/data/caf.svg,Bangui
+script.js:8 Chad,https://restcountries.eu/data/tcd.svg,N'Djamena
+script.js:8 Chile,https://restcountries.eu/data/chl.svg,Santiago
+script.js:8 China,https://restcountries.eu/data/chn.svg,Beijing
+script.js:8 Christmas Island,https://restcountries.eu/data/cxr.svg,Flying Fish Cove
+script.js:8 Cocos (Keeling) Islands,https://restcountries.eu/data/cck.svg,West Island
+script.js:8 Colombia,https://restcountries.eu/data/col.svg,Bogotá
+script.js:8 Comoros,https://restcountries.eu/data/com.svg,Moroni
+script.js:8 Congo,https://restcountries.eu/data/cog.svg,Brazzaville
+script.js:8 Congo (Democratic Republic of the),https://restcountries.eu/data/cod.svg,Kinshasa
+script.js:8 Cook Islands,https://restcountries.eu/data/cok.svg,Avarua
+script.js:8 Costa Rica,https://restcountries.eu/data/cri.svg,San José
+script.js:8 Croatia,https://restcountries.eu/data/hrv.svg,Zagreb
+script.js:8 Cuba,https://restcountries.eu/data/cub.svg,Havana
+script.js:8 Curaçao,https://restcountries.eu/data/cuw.svg,Willemstad
+script.js:8 Cyprus,https://restcountries.eu/data/cyp.svg,Nicosia
+script.js:8 Czech Republic,https://restcountries.eu/data/cze.svg,Prague
+script.js:8 Denmark,https://restcountries.eu/data/dnk.svg,Copenhagen
+script.js:8 Djibouti,https://restcountries.eu/data/dji.svg,Djibouti
+script.js:8 Dominica,https://restcountries.eu/data/dma.svg,Roseau
+script.js:8 Dominican Republic,https://restcountries.eu/data/dom.svg,Santo Domingo
+script.js:8 Ecuador,https://restcountries.eu/data/ecu.svg,Quito
+script.js:8 Egypt,https://restcountries.eu/data/egy.svg,Cairo
+script.js:8 El Salvador,https://restcountries.eu/data/slv.svg,San Salvador
+script.js:8 Equatorial Guinea,https://restcountries.eu/data/gnq.svg,Malabo
+script.js:8 Eritrea,https://restcountries.eu/data/eri.svg,Asmara
+script.js:8 Estonia,https://restcountries.eu/data/est.svg,Tallinn
+script.js:8 Ethiopia,https://restcountries.eu/data/eth.svg,Addis Ababa
+script.js:8 Falkland Islands (Malvinas),https://restcountries.eu/data/flk.svg,Stanley
+script.js:8 Faroe Islands,https://restcountries.eu/data/fro.svg,Tórshavn
+script.js:8 Fiji,https://restcountries.eu/data/fji.svg,Suva
+script.js:8 Finland,https://restcountries.eu/data/fin.svg,Helsinki
+script.js:8 France,https://restcountries.eu/data/fra.svg,Paris
+script.js:8 French Guiana,https://restcountries.eu/data/guf.svg,Cayenne
+script.js:8 French Polynesia,https://restcountries.eu/data/pyf.svg,Papeetē
+script.js:8 French Southern Territories,https://restcountries.eu/data/atf.svg,Port-aux-Français
+script.js:8 Gabon,https://restcountries.eu/data/gab.svg,Libreville
+script.js:8 Gambia,https://restcountries.eu/data/gmb.svg,Banjul
+script.js:8 Georgia,https://restcountries.eu/data/geo.svg,Tbilisi
+script.js:8 Germany,https://restcountries.eu/data/deu.svg,Berlin
+script.js:8 Ghana,https://restcountries.eu/data/gha.svg,Accra
+script.js:8 Gibraltar,https://restcountries.eu/data/gib.svg,Gibraltar
+script.js:8 Greece,https://restcountries.eu/data/grc.svg,Athens
+script.js:8 Greenland,https://restcountries.eu/data/grl.svg,Nuuk
+script.js:8 Grenada,https://restcountries.eu/data/grd.svg,St. George's
+script.js:8 Guadeloupe,https://restcountries.eu/data/glp.svg,Basse-Terre
+script.js:8 Guam,https://restcountries.eu/data/gum.svg,Hagåtña
+script.js:8 Guatemala,https://restcountries.eu/data/gtm.svg,Guatemala City
+script.js:8 Guernsey,https://restcountries.eu/data/ggy.svg,St. Peter Port
+script.js:8 Guinea,https://restcountries.eu/data/gin.svg,Conakry
+script.js:8 Guinea-Bissau,https://restcountries.eu/data/gnb.svg,Bissau
+script.js:8 Guyana,https://restcountries.eu/data/guy.svg,Georgetown
+script.js:8 Haiti,https://restcountries.eu/data/hti.svg,Port-au-Prince
+script.js:8 Heard Island and McDonald Islands,https://restcountries.eu/data/hmd.svg,
+script.js:8 Holy See,https://restcountries.eu/data/vat.svg,Rome
+script.js:8 Honduras,https://restcountries.eu/data/hnd.svg,Tegucigalpa
+script.js:8 Hong Kong,https://restcountries.eu/data/hkg.svg,City of Victoria
+script.js:8 Hungary,https://restcountries.eu/data/hun.svg,Budapest
+script.js:8 Iceland,https://restcountries.eu/data/isl.svg,Reykjavík
+script.js:8 India,https://restcountries.eu/data/ind.svg,New Delhi
+script.js:8 Indonesia,https://restcountries.eu/data/idn.svg,Jakarta
+script.js:8 Côte d'Ivoire,https://restcountries.eu/data/civ.svg,Yamoussoukro
+script.js:8 Iran (Islamic Republic of),https://restcountries.eu/data/irn.svg,Tehran
+script.js:8 Iraq,https://restcountries.eu/data/irq.svg,Baghdad
+script.js:8 Ireland,https://restcountries.eu/data/irl.svg,Dublin
+script.js:8 Isle of Man,https://restcountries.eu/data/imn.svg,Douglas
+script.js:8 Israel,https://restcountries.eu/data/isr.svg,Jerusalem
+script.js:8 Italy,https://restcountries.eu/data/ita.svg,Rome
+script.js:8 Jamaica,https://restcountries.eu/data/jam.svg,Kingston
+script.js:8 Japan,https://restcountries.eu/data/jpn.svg,Tokyo
+script.js:8 Jersey,https://restcountries.eu/data/jey.svg,Saint Helier
+script.js:8 Jordan,https://restcountries.eu/data/jor.svg,Amman
+script.js:8 Kazakhstan,https://restcountries.eu/data/kaz.svg,Astana
+script.js:8 Kenya,https://restcountries.eu/data/ken.svg,Nairobi
+script.js:8 Kiribati,https://restcountries.eu/data/kir.svg,South Tarawa
+script.js:8 Kuwait,https://restcountries.eu/data/kwt.svg,Kuwait City
+script.js:8 Kyrgyzstan,https://restcountries.eu/data/kgz.svg,Bishkek
+script.js:8 Lao People's Democratic Republic,https://restcountries.eu/data/lao.svg,Vientiane
+script.js:8 Latvia,https://restcountries.eu/data/lva.svg,Riga
+script.js:8 Lebanon,https://restcountries.eu/data/lbn.svg,Beirut
+script.js:8 Lesotho,https://restcountries.eu/data/lso.svg,Maseru
+script.js:8 Liberia,https://restcountries.eu/data/lbr.svg,Monrovia
+script.js:8 Libya,https://restcountries.eu/data/lby.svg,Tripoli
+script.js:8 Liechtenstein,https://restcountries.eu/data/lie.svg,Vaduz
+script.js:8 Lithuania,https://restcountries.eu/data/ltu.svg,Vilnius
+script.js:8 Luxembourg,https://restcountries.eu/data/lux.svg,Luxembourg
+script.js:8 Macao,https://restcountries.eu/data/mac.svg,
+script.js:8 Macedonia (the former Yugoslav Republic of),https://restcountries.eu/data/mkd.svg,Skopje
+script.js:8 Madagascar,https://restcountries.eu/data/mdg.svg,Antananarivo
+script.js:8 Malawi,https://restcountries.eu/data/mwi.svg,Lilongwe
+script.js:8 Malaysia,https://restcountries.eu/data/mys.svg,Kuala Lumpur
+script.js:8 Maldives,https://restcountries.eu/data/mdv.svg,Malé
+script.js:8 Mali,https://restcountries.eu/data/mli.svg,Bamako
+script.js:8 Malta,https://restcountries.eu/data/mlt.svg,Valletta
+script.js:8 Marshall Islands,https://restcountries.eu/data/mhl.svg,Majuro
+script.js:8 Martinique,https://restcountries.eu/data/mtq.svg,Fort-de-France
+script.js:8 Mauritania,https://restcountries.eu/data/mrt.svg,Nouakchott
+script.js:8 Mauritius,https://restcountries.eu/data/mus.svg,Port Louis
+script.js:8 Mayotte,https://restcountries.eu/data/myt.svg,Mamoudzou
+script.js:8 Mexico,https://restcountries.eu/data/mex.svg,Mexico City
+script.js:8 Micronesia (Federated States of),https://restcountries.eu/data/fsm.svg,Palikir
+script.js:8 Moldova (Republic of),https://restcountries.eu/data/mda.svg,Chișinău
+script.js:8 Monaco,https://restcountries.eu/data/mco.svg,Monaco
+script.js:8 Mongolia,https://restcountries.eu/data/mng.svg,Ulan Bator
+script.js:8 Montenegro,https://restcountries.eu/data/mne.svg,Podgorica
+script.js:8 Montserrat,https://restcountries.eu/data/msr.svg,Plymouth
+script.js:8 Morocco,https://restcountries.eu/data/mar.svg,Rabat
+script.js:8 Mozambique,https://restcountries.eu/data/moz.svg,Maputo
+script.js:8 Myanmar,https://restcountries.eu/data/mmr.svg,Naypyidaw
+script.js:8 Namibia,https://restcountries.eu/data/nam.svg,Windhoek
+script.js:8 Nauru,https://restcountries.eu/data/nru.svg,Yaren
+script.js:8 Nepal,https://restcountries.eu/data/npl.svg,Kathmandu
+script.js:8 Netherlands,https://restcountries.eu/data/nld.svg,Amsterdam
+script.js:8 New Caledonia,https://restcountries.eu/data/ncl.svg,Nouméa
+script.js:8 New Zealand,https://restcountries.eu/data/nzl.svg,Wellington
+script.js:8 Nicaragua,https://restcountries.eu/data/nic.svg,Managua
+script.js:8 Niger,https://restcountries.eu/data/ner.svg,Niamey
+script.js:8 Nigeria,https://restcountries.eu/data/nga.svg,Abuja
+script.js:8 Niue,https://restcountries.eu/data/niu.svg,Alofi
+script.js:8 Norfolk Island,https://restcountries.eu/data/nfk.svg,Kingston
+script.js:8 Korea (Democratic People's Republic of),https://restcountries.eu/data/prk.svg,Pyongyang
+script.js:8 Northern Mariana Islands,https://restcountries.eu/data/mnp.svg,Saipan
+script.js:8 Norway,https://restcountries.eu/data/nor.svg,Oslo
+script.js:8 Oman,https://restcountries.eu/data/omn.svg,Muscat
+script.js:8 Pakistan,https://restcountries.eu/data/pak.svg,Islamabad
+script.js:8 Palau,https://restcountries.eu/data/plw.svg,Ngerulmud
+script.js:8 Palestine, State of,https://restcountries.eu/data/pse.svg,Ramallah
+script.js:8 Panama,https://restcountries.eu/data/pan.svg,Panama City
+script.js:8 Papua New Guinea,https://restcountries.eu/data/png.svg,Port Moresby
+script.js:8 Paraguay,https://restcountries.eu/data/pry.svg,Asunción
+script.js:8 Peru,https://restcountries.eu/data/per.svg,Lima
+script.js:8 Philippines,https://restcountries.eu/data/phl.svg,Manila
+script.js:8 Pitcairn,https://restcountries.eu/data/pcn.svg,Adamstown
+script.js:8 Poland,https://restcountries.eu/data/pol.svg,Warsaw
+script.js:8 Portugal,https://restcountries.eu/data/prt.svg,Lisbon
+script.js:8 Puerto Rico,https://restcountries.eu/data/pri.svg,San Juan
+script.js:8 Qatar,https://restcountries.eu/data/qat.svg,Doha
+script.js:8 Republic of Kosovo,https://restcountries.eu/data/kos.svg,Pristina
+script.js:8 Réunion,https://restcountries.eu/data/reu.svg,Saint-Denis
+script.js:8 Romania,https://restcountries.eu/data/rou.svg,Bucharest
+script.js:8 Russian Federation,https://restcountries.eu/data/rus.svg,Moscow
+script.js:8 Rwanda,https://restcountries.eu/data/rwa.svg,Kigali
+script.js:8 Saint Barthélemy,https://restcountries.eu/data/blm.svg,Gustavia
+script.js:8 Saint Helena, Ascension and Tristan da Cunha,https://restcountries.eu/data/shn.svg,Jamestown
+script.js:8 Saint Kitts and Nevis,https://restcountries.eu/data/kna.svg,Basseterre
+script.js:8 Saint Lucia,https://restcountries.eu/data/lca.svg,Castries
+script.js:8 Saint Martin (French part),https://restcountries.eu/data/maf.svg,Marigot
+script.js:8 Saint Pierre and Miquelon,https://restcountries.eu/data/spm.svg,Saint-Pierre
+script.js:8 Saint Vincent and the Grenadines,https://restcountries.eu/data/vct.svg,Kingstown
+script.js:8 Samoa,https://restcountries.eu/data/wsm.svg,Apia
+script.js:8 San Marino,https://restcountries.eu/data/smr.svg,City of San Marino
+script.js:8 Sao Tome and Principe,https://restcountries.eu/data/stp.svg,São Tomé
+script.js:8 Saudi Arabia,https://restcountries.eu/data/sau.svg,Riyadh
+script.js:8 Senegal,https://restcountries.eu/data/sen.svg,Dakar
+script.js:8 Serbia,https://restcountries.eu/data/srb.svg,Belgrade
+script.js:8 Seychelles,https://restcountries.eu/data/syc.svg,Victoria
+script.js:8 Sierra Leone,https://restcountries.eu/data/sle.svg,Freetown
+script.js:8 Singapore,https://restcountries.eu/data/sgp.svg,Singapore
+script.js:8 Sint Maarten (Dutch part),https://restcountries.eu/data/sxm.svg,Philipsburg
+script.js:8 Slovakia,https://restcountries.eu/data/svk.svg,Bratislava
+script.js:8 Slovenia,https://restcountries.eu/data/svn.svg,Ljubljana
+script.js:8 Solomon Islands,https://restcountries.eu/data/slb.svg,Honiara
+script.js:8 Somalia,https://restcountries.eu/data/som.svg,Mogadishu
+script.js:8 South Africa,https://restcountries.eu/data/zaf.svg,Pretoria
+script.js:8 South Georgia and the South Sandwich Islands,https://restcountries.eu/data/sgs.svg,King Edward Point
+script.js:8 Korea (Republic of),https://restcountries.eu/data/kor.svg,Seoul
+script.js:8 South Sudan,https://restcountries.eu/data/ssd.svg,Juba
+script.js:8 Spain,https://restcountries.eu/data/esp.svg,Madrid
+script.js:8 Sri Lanka,https://restcountries.eu/data/lka.svg,Colombo
+script.js:8 Sudan,https://restcountries.eu/data/sdn.svg,Khartoum
+script.js:8 Suriname,https://restcountries.eu/data/sur.svg,Paramaribo
+script.js:8 Svalbard and Jan Mayen,https://restcountries.eu/data/sjm.svg,Longyearbyen
+script.js:8 Swaziland,https://restcountries.eu/data/swz.svg,Lobamba
+script.js:8 Sweden,https://restcountries.eu/data/swe.svg,Stockholm
+script.js:8 Switzerland,https://restcountries.eu/data/che.svg,Bern
+script.js:8 Syrian Arab Republic,https://restcountries.eu/data/syr.svg,Damascus
+script.js:8 Taiwan,https://restcountries.eu/data/twn.svg,Taipei
+script.js:8 Tajikistan,https://restcountries.eu/data/tjk.svg,Dushanbe
+script.js:8 Tanzania, United Republic of,https://restcountries.eu/data/tza.svg,Dodoma
+script.js:8 Thailand,https://restcountries.eu/data/tha.svg,Bangkok
+script.js:8 Timor-Leste,https://restcountries.eu/data/tls.svg,Dili
+script.js:8 Togo,https://restcountries.eu/data/tgo.svg,Lomé
+script.js:8 Tokelau,https://restcountries.eu/data/tkl.svg,Fakaofo
+script.js:8 Tonga,https://restcountries.eu/data/ton.svg,Nuku'alofa
+script.js:8 Trinidad and Tobago,https://restcountries.eu/data/tto.svg,Port of Spain
+script.js:8 Tunisia,https://restcountries.eu/data/tun.svg,Tunis
+script.js:8 Turkey,https://restcountries.eu/data/tur.svg,Ankara
+script.js:8 Turkmenistan,https://restcountries.eu/data/tkm.svg,Ashgabat
+script.js:8 Turks and Caicos Islands,https://restcountries.eu/data/tca.svg,Cockburn Town
+script.js:8 Tuvalu,https://restcountries.eu/data/tuv.svg,Funafuti
+script.js:8 Uganda,https://restcountries.eu/data/uga.svg,Kampala
+script.js:8 Ukraine,https://restcountries.eu/data/ukr.svg,Kiev
+script.js:8 United Arab Emirates,https://restcountries.eu/data/are.svg,Abu Dhabi
+script.js:8 United Kingdom of Great Britain and Northern Ireland,https://restcountries.eu/data/gbr.svg,London
+script.js:8 United States of America,https://restcountries.eu/data/usa.svg,Washington, D.C.
+script.js:8 Uruguay,https://restcountries.eu/data/ury.svg,Montevideo
+script.js:8 Uzbekistan,https://restcountries.eu/data/uzb.svg,Tashkent
+script.js:8 Vanuatu,https://restcountries.eu/data/vut.svg,Port Vila
+script.js:8 Venezuela (Bolivarian Republic of),https://restcountries.eu/data/ven.svg,Caracas
+script.js:8 Viet Nam,https://restcountries.eu/data/vnm.svg,Hanoi
+script.js:8 Wallis and Futuna,https://restcountries.eu/data/wlf.svg,Mata-Utu
+script.js:8 Western Sahara,https://restcountries.eu/data/esh.svg,El Aaiún
+script.js:8 Yemen,https://restcountries.eu/data/yem.svg,Sana'a
+script.js:8 Zambia,https://restcountries.eu/data/zmb.svg,Lusaka
+script.js:8 Zimbabwe,https://restcountries.eu/data/zwe.svg,Harare
